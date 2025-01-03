@@ -15,7 +15,7 @@ public class LoginAutomationTest {
     @Test
     public void testLogin() {
         // Set the ChromeDriver path
-        WebDriverManager.chromedriver().setup();
+        WebDriverManager.chromedriver().driverVersion("131.0.6778.205").setup();
         WebDriver driver = new ChromeDriver();
 
         try {
