@@ -14,7 +14,7 @@ public class LoginAutomationTest {
     @Test
     public void testLogin() {
         // Set the ChromeDriver path
-        System.setProperty("webdriver.chrome.driver", "/opt/homebrew/bin/chromedriver");
+        WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
 
         try {
