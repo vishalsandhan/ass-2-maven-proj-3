@@ -13,12 +13,14 @@
     </properties>
 
     <dependencies>
+         <!-- WebDriver Manager for automatic ChromeDriver management -->
          <dependency>
              <groupId>io.github.bonigarcia</groupId>
              <artifactId>webdrivermanager</artifactId>
              <version>5.6.3</version> 
          </dependency>
 
+        <!-- JUnit 5 for running tests -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
@@ -26,22 +28,26 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- Selenium Java (Core library for WebDriver) -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>4.14.0</version>
+            <version>4.27.0</version>  <!-- Corrected version to match ChromeDriver compatibility -->
         </dependency>
 
+        <!-- Selenium ChromeDriver for managing Chrome browser -->
         <dependency>
-          <groupId>org.seleniumhq.selenium</groupId>
-          <artifactId>selenium-devtools-v131</artifactId> 
-          <version>4.27.0</version> 
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-chrome-driver</artifactId>
+            <version>4.27.0</version>  <!-- Ensure this version matches selenium-java version -->
         </dependency>
-
+        
+        <!-- Add other necessary dependencies if any -->
     </dependencies>
 
     <build>
         <plugins>
+            <!-- Surefire Plugin for running tests -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
@@ -52,6 +58,8 @@
                     </includes>
                 </configuration>
             </plugin>
+
+            <!-- JaCoCo Plugin for code coverage -->
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
