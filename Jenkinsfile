@@ -7,9 +7,9 @@ pipeline {
 
     environment {
         SONAR_TOKEN = credentials('sonar-token')
-        SONAR_SCANNER_PATH = '/Users/senthilvelmuthupandy/Downloads/sonar-scanner-6.2.1.4610-macosx-aarch64/bin'
-        JAVA_HOME = '/Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home'
-        PATH = "${SONAR_SCANNER_PATH}:${JAVA_HOME}/bin:${env.PATH}"
+        // SONAR_SCANNER_PATH = '/Users/senthilvelmuthupandy/Downloads/sonar-scanner-6.2.1.4610-macosx-aarch64/bin'
+        // JAVA_HOME = '/Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home'
+        // PATH = "${SONAR_SCANNER_PATH}:${JAVA_HOME}/bin:${env.PATH}"
     }
 
     stages {
@@ -39,7 +39,7 @@ pipeline {
             steps {
                 echo 'Starting SonarQube analysis...'
                 sh '''
-                sonar-scanner -Dsonar.projectKey=MavenTask \
+                sonar-scanner -Dsonar.projectKey=Ass-2-maven-project \
                   -Dsonar.sources=. \
                   -Dsonar.java.binaries=target/classes \
                   -Dsonar.jacoco.reportPaths=target/site/jacoco/jacoco.xml \
