@@ -15,8 +15,13 @@ public class LoginAutomationTest {
     @Test
     public void testLogin() {
         // Set the ChromeDriver path
-        WebDriverManager.chromedriver().driverVersion("131.0.6778.205").setup();
-        WebDriver driver = new ChromeDriver();
+        // WebDriverManager.chromedriver().driverVersion("131.0.6778.205").setup();
+        // WebDriver driver = new ChromeDriver();
+        WebDriverManager.chromedriver().setup();
+ChromeOptions options = new ChromeOptions();
+options.setHeadless(false);  // Optionally run without headless mode for debugging
+WebDriver driver = new ChromeDriver(options);
+
 
         try {
             // Navigate to the web application
