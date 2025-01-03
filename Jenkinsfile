@@ -24,7 +24,7 @@ pipeline {
         stage('Build & Package') {
             steps {
                 echo 'Building and packaging the application...'
-                sh 'mvn clean install'
+                sh 'mvn clean test -X'
             }
         }
 
